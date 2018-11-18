@@ -28,7 +28,7 @@
         <!--Device-->
         <scene sceneID="18">
             <objects>
-                <tableViewController title="Device" id="12" customClass="RBLDetailViewController" sceneMemberID="viewController">
+                <tableViewController title="Device" id="12" customClass="devicesViewController" customModule="BLE_Select" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,12 +63,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="396" y="-40"/>
+            <point key="canvasLocation" x="344" y="-46"/>
         </scene>
         <!--RedBearLab-->
         <scene sceneID="rI0-vg-hHV">
             <objects>
-                <viewController id="j2O-YJ-RsU" customClass="RBLMainViewController" sceneMemberID="viewController">
+                <viewController id="j2O-YJ-RsU" customClass="MainViewController" customModule="BLE_Select" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Chj-um-A4G"/>
                         <viewControllerLayoutGuide type="bottom" id="eKW-ZA-ItS"/>
@@ -86,7 +86,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="scanClick:" destination="j2O-YJ-RsU" eventType="touchUpInside" id="oLs-6q-DJm"/>
+                                    <action selector="scanClick:" destination="j2O-YJ-RsU" eventType="touchUpInside" id="b7Z-H9-eAN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRE-JZ-GRr">
@@ -95,7 +95,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="lastClick:" destination="j2O-YJ-RsU" eventType="touchUpInside" id="6mp-vM-rAU"/>
+                                    <action selector="LastClick:" destination="j2O-YJ-RsU" eventType="touchUpInside" id="aZG-gE-Kr7"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Kbv-Uh-oNg">
@@ -130,10 +130,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="RedBearLab" id="jfe-FB-GqI"/>
                     <connections>
-                        <outlet property="lastButton" destination="tRE-JZ-GRr" id="Y3V-9J-7q4"/>
-                        <outlet property="scanButton" destination="tRf-do-OWF" id="xSR-sO-B29"/>
-                        <outlet property="spinner" destination="Kbv-Uh-oNg" id="xIs-hP-vUp"/>
-                        <outlet property="uuidLabel" destination="Vw1-eT-KEt" id="b5q-Sd-qjq"/>
+                        <outlet property="lastButton" destination="tRE-JZ-GRr" id="i3o-E8-NEm"/>
+                        <outlet property="rssiLabel" destination="Vw1-eT-KEt" id="6CM-Vn-IoC"/>
+                        <outlet property="scanButton" destination="tRf-do-OWF" id="4Jr-jF-Sq4"/>
+                        <outlet property="spinner" destination="Kbv-Uh-oNg" id="DN4-1S-Yk4"/>
+                        <outlet property="uuidLabel" destination="3G1-rf-2cb" id="TPd-fq-BGR"/>
                         <segue destination="12" kind="push" identifier="showDevice" id="z4A-Ti-lIx"/>
                     </connections>
                 </viewController>

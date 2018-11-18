@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2932F68F1813D5590049385E /* BLE.m in Sources */ = {isa = PBXBuildFile; fileRef = 2932F68D1813D5590049385E /* BLE.m */; };
+		7B38A56D21A1C37A00C0B8CA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A56C21A1C37A00C0B8CA /* MainViewController.swift */; };
+		7B38A57021A1E0DF00C0B8CA /* devicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B38A56F21A1E0DF00C0B8CA /* devicesViewController.swift */; };
 		C2EFAF6D1727D22000ED5A4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF6C1727D22000ED5A4F /* UIKit.framework */; };
 		C2EFAF6F1727D22000ED5A4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF6E1727D22000ED5A4F /* Foundation.framework */; };
 		C2EFAF711727D22000ED5A4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF701727D22000ED5A4F /* CoreGraphics.framework */; };
@@ -18,8 +20,6 @@
 		C2EFAF811727D22000ED5A4F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EFAF801727D22000ED5A4F /* Default@2x.png */; };
 		C2EFAF831727D22000ED5A4F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2EFAF821727D22000ED5A4F /* Default-568h@2x.png */; };
 		C2EFAF861727D22000ED5A4F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2EFAF841727D22000ED5A4F /* MainStoryboard.storyboard */; };
-		C2EFAF891727D22000ED5A4F /* RBLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAF881727D22000ED5A4F /* RBLDetailViewController.m */; };
-		C2EFAFC21727D6BF00ED5A4F /* RBLMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAFC11727D6BF00ED5A4F /* RBLMainViewController.m */; };
 		C2EFAFF61727F57700ED5A4F /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAFF51727F57600ED5A4F /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +27,9 @@
 		2932F68C1813D5590049385E /* BLE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLE.h; path = BLE/BLE.h; sourceTree = SOURCE_ROOT; };
 		2932F68D1813D5590049385E /* BLE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLE.m; path = BLE/BLE.m; sourceTree = SOURCE_ROOT; };
 		2932F68E1813D5590049385E /* BLEDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLEDefines.h; path = BLE/BLEDefines.h; sourceTree = SOURCE_ROOT; };
+		7B38A56C21A1C37A00C0B8CA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7B38A56E21A1C3A700C0B8CA /* BLE-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BLE-Bridge-Header.h"; sourceTree = "<group>"; };
+		7B38A56F21A1E0DF00C0B8CA /* devicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devicesViewController.swift; sourceTree = "<group>"; };
 		C2EFAF691727D22000ED5A4F /* BLE Select.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BLE Select.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EFAF6C1727D22000ED5A4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C2EFAF6E1727D22000ED5A4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -41,10 +44,6 @@
 		C2EFAF801727D22000ED5A4F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C2EFAF821727D22000ED5A4F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C2EFAF851727D22000ED5A4F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C2EFAF871727D22000ED5A4F /* RBLDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBLDetailViewController.h; sourceTree = "<group>"; };
-		C2EFAF881727D22000ED5A4F /* RBLDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RBLDetailViewController.m; sourceTree = "<group>"; };
-		C2EFAFC01727D6BF00ED5A4F /* RBLMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBLMainViewController.h; path = ../RBLMainViewController.h; sourceTree = "<group>"; };
-		C2EFAFC11727D6BF00ED5A4F /* RBLMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBLMainViewController.m; path = ../RBLMainViewController.m; sourceTree = "<group>"; };
 		C2EFAFF51727F57600ED5A4F /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -109,10 +108,9 @@
 				C2EFAF7B1727D22000ED5A4F /* RBLAppDelegate.h */,
 				C2EFAF7C1727D22000ED5A4F /* RBLAppDelegate.m */,
 				C2EFAF841727D22000ED5A4F /* MainStoryboard.storyboard */,
-				C2EFAFC01727D6BF00ED5A4F /* RBLMainViewController.h */,
-				C2EFAFC11727D6BF00ED5A4F /* RBLMainViewController.m */,
-				C2EFAF871727D22000ED5A4F /* RBLDetailViewController.h */,
-				C2EFAF881727D22000ED5A4F /* RBLDetailViewController.m */,
+				7B38A56E21A1C3A700C0B8CA /* BLE-Bridge-Header.h */,
+				7B38A56C21A1C37A00C0B8CA /* MainViewController.swift */,
+				7B38A56F21A1E0DF00C0B8CA /* devicesViewController.swift */,
 				C2EFAF731727D22000ED5A4F /* Supporting Files */,
 			);
 			path = "BLE Select";
@@ -164,6 +162,7 @@
 				TargetAttributes = {
 					C2EFAF681727D22000ED5A4F = {
 						DevelopmentTeam = 9CL97632BB;
+						LastSwiftMigration = 0920;
 					};
 				};
 			};
@@ -205,10 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2EFAF791727D22000ED5A4F /* main.m in Sources */,
+				7B38A57021A1E0DF00C0B8CA /* devicesViewController.swift in Sources */,
 				C2EFAF7D1727D22000ED5A4F /* RBLAppDelegate.m in Sources */,
-				C2EFAF891727D22000ED5A4F /* RBLDetailViewController.m in Sources */,
+				7B38A56D21A1C37A00C0B8CA /* MainViewController.swift in Sources */,
 				2932F68F1813D5590049385E /* BLE.m in Sources */,
-				C2EFAFC21727D6BF00ED5A4F /* RBLMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,12 +292,17 @@
 		C2EFAF901727D22000ED5A4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9CL97632BB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLE Select/BLE Select-Prefix.pch";
 				INFOPLIST_FILE = "BLE Select/BLE Select-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jamee/Desktop/BLE Select copy/BLE Select/BLE-Bridge-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -306,12 +310,16 @@
 		C2EFAF911727D22000ED5A4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9CL97632BB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BLE Select/BLE Select-Prefix.pch";
 				INFOPLIST_FILE = "BLE Select/BLE Select-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/jamee/Desktop/BLE Select copy/BLE Select/BLE-Bridge-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

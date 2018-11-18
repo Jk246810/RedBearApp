@@ -1,6 +1,8 @@
 
 /*
  
+ BLE framework source code is placed under the MIT license 
+
  Copyright (c) 2013 RedBearLab
  
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
@@ -201,6 +203,8 @@ static int rssi = 0;
 
 - (void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error;
 {
+    done = false;
+
     [[self delegate] bleDidDisconnect];
     
     isConnected = false;
@@ -212,7 +216,6 @@ static int rssi = 0;
     
     self.activePeripheral = peripheral;
     self.activePeripheral.delegate = self;
-    
     [self.CM connectPeripheral:self.activePeripheral
                        options:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:CBConnectPeripheralOptionNotifyOnDisconnectionKey]];
 }
@@ -412,6 +415,7 @@ static int rssi = 0;
 {
 #if TARGET_OS_IPHONE
     NSLog(@"Status of CoreBluetooth central manager changed %d (%s)", central.state, [self centralManagerStateToString:central.state]);
+	[self.delegate bleDidChangeState: central.state];
 #else
     [self isLECapableHardware];
 #endif
@@ -455,7 +459,10 @@ static int rssi = 0;
     
     self.activePeripheral = peripheral;
     [self.activePeripheral discoverServices:nil];
+    [self getAllServicesFromPeripheral:peripheral];
 }
+
+static bool done = false;
 
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
@@ -471,9 +478,13 @@ static int rssi = 0;
             
             if ([service.UUID isEqual:s.UUID])
             {
-                [self enableReadNotification:activePeripheral];
-                [[self delegate] bleDidConnect];
-                isConnected = true;
+                if (!done)
+                {
+                    [self enableReadNotification:activePeripheral];
+                    [[self delegate] bleDidConnect];
+                    isConnected = true;
+                    done = true;
+                }
                 
                 break;
             }
