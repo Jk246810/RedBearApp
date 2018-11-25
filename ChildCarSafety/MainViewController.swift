@@ -65,12 +65,13 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     @IBAction func LastClick(_ sender: Any) {
         ble.findPeripherals(3)
         Timer.scheduledTimer(timeInterval: TimeInterval(Float(3.0)), target: self, selector: #selector(self.connectionTimer(_:)), userInfo: nil, repeats: false)
-        previousConnection = true
+         previousConnection = true
         self.lastButton.isHidden = true;
         self.scanButton.isHidden = true;
         
         animationView.isHidden = true;
         animationView.pause()
+        
     }
     
     @IBAction func scanClick(_ sender: Any) {
@@ -93,7 +94,7 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
         previousConnection = false
         self.lastButton.isHidden = true
         self.scanButton.isHidden = true
-        
+       
         
     }
     
@@ -119,15 +120,19 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     func connectionTimer(_ timer: Timer?) {
         if(ble.peripherals != nil && ble.peripherals.count > 0){
             if(previousConnection) {
-              
+               
                 for i in 0..<ble.peripherals.count {
                     let p = ble.peripherals[i] as? CBPeripheral
                     if(p?.identifier.uuidString != nil) {
                         if (lastUUID?.isEqual(to: p!.identifier.uuidString))! {
+                            
                             ble.connectPeripheral(p)
+                            
+                        
                         }
                     }
                 }
+               
             }
             else {
                 devices.removeAllObjects()
@@ -145,20 +150,28 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
         
         
         else {
+            
             if (self.lastUUID?.length == 0) {
                 self.lastButton.isHidden = true;
             }else{
                 self.lastButton.isHidden = false;
             }
             self.scanButton.isHidden = false;
-            animationView.isHidden = false
-            
+            //animationView.isHidden = false
+            animationView.setAnimation(named: "ripple")
+            animationView.loopAnimation = true
             animationView.play()
+            //need to make alertview here
             
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.scanButton.isHidden = false;
+        animationView.isHidden = false
+        animationView.setAnimation(named: "ripple")
+        animationView.loopAnimation = true
+        animationView.play()
         if(segue.identifier == "showDevice") {
             let vc = segue.destination as? devicesViewController
            
@@ -191,7 +204,7 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     func bleDidReceiveData(_ data: UnsafeMutablePointer<UInt8>!, length: Int32) {
     }
     func bleDidConnect() {
-        print("in here")
+       
         lastUUID = ble.activePeripheral.identifier.uuidString as NSString
         UserDefaults.standard.set(lastUUID, forKey: UUIDPrefKey as String)
         UserDefaults.standard.synchronize()
