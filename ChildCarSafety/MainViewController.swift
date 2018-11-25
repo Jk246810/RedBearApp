@@ -18,16 +18,17 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     let UUIDPrefKey = ("UUIDPrefKey") as NSString;
     var devices : NSMutableArray = [];
    
+   
+    @IBOutlet weak var wifiImage: UIImageView!
     
-  
     @IBOutlet weak var animationView: LOTAnimationView!
-    @IBOutlet weak var rssiLabel: UILabel!
     @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var lastButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    @IBOutlet weak var disconnectButton: UIButton!
     
+    @IBOutlet weak var gradientView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -47,8 +48,8 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
             self.lastButton.isHidden = true;
         }
         
-      
-        
+      disconnectButton.isHidden = true
+      createGradient()
         
         //Need to set up buttons and labels
         // Do any additional setup after loading the view.
@@ -72,15 +73,10 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     }
     
     @IBAction func scanClick(_ sender: Any) {
-        if (scanButton.titleLabel?.text == "Disconnect") {
-            animationView.setAnimation(named: "ripple")
-            animationView.loopAnimation = true
-            animationView.play()
-        }
-        if (scanButton.titleLabel?.text == "Scan All") {
-            animationView.setAnimation(named: "confetti")
-            animationView.play()
-        }
+
+        animationView.setAnimation(named: "confetti")
+        animationView.play()
+        
         if((ble.activePeripheral) != nil) {
             if(ble.activePeripheral.state == CBPeripheralState.connected) {
                 ble.cm.cancelPeripheralConnection(ble.activePeripheral)
@@ -100,6 +96,23 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
         
     }
     
+    @IBAction func disconnectTapped(_ sender: Any) {
+        if((ble.activePeripheral) != nil) {
+            if(ble.activePeripheral.state == CBPeripheralState.connected) {
+                ble.cm.cancelPeripheralConnection(ble.activePeripheral)
+                return
+            }
+        }
+        if((ble.peripherals) != nil) {
+            ble.peripherals = nil
+        }
+        ble.findPeripherals(3)
+        
+        Timer.scheduledTimer(timeInterval: TimeInterval(Float(1.0)), target: self, selector: #selector(self.connectionTimer(_:)), userInfo: nil, repeats: false)
+        previousConnection = false
+        self.lastButton.isHidden = true
+        
+    }
     
     
     func connectionTimer(_ timer: Timer?) {
@@ -165,9 +178,12 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     }
     func bleDidDisconnect() {
         self.lastButton.isHidden = false;
-        self.rssiLabel.isHidden = true;
-        scanButton.setTitle("Scan All", for: .normal)
+        wifiImage.isHighlighted = false
+        disconnectButton.isHidden = true
+        scanButton.isHidden = false
         animationView.isHidden = false
+        animationView.setAnimation(named: "ripple")
+        animationView.loopAnimation = true
         animationView.play()
         
     }
@@ -178,30 +194,41 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
         lastUUID = ble.activePeripheral.identifier.uuidString as NSString
         UserDefaults.standard.set(lastUUID, forKey: UUIDPrefKey as String)
         UserDefaults.standard.synchronize()
-        print("origional")
-        print(uuidLabel.text)
+        wifiImage.isHighlighted = true
         lastButton.isHidden = true
-        scanButton.isHidden = false
+       // scanButton.isHidden = false
         
         uuidLabel.text = lastUUID! as String
-        rssiLabel.text = "RSSI: ?"
-        rssiLabel.isHidden = false
-        scanButton.setTitle("Disconnect", for: .normal)
-        print("connected")
-        print(uuidLabel.text)
+       
+        disconnectButton.isHidden = false
+       // scanButton.setTitle("Disconnect", for: .normal)
+       
+        
     }
-    
-    func bleDidUpdateRSSI(_ rssi: NSNumber?) {
-        rssiLabel.text = "RSSI: \("\(rssi)")"
+   
+    func createGradient(){
+//        let gradient = CAGradientLayer()
+//        gradient.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor, UIColor.blue.cgColor]
+//        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+//        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+//        gradient.frame = gradientView.bounds
+//        gradientView.layer.addSublayer(gradient)
+        gradientView.layer.borderColor = UIColor.white.cgColor
+        
     }
-    
-    func getUUIDString(_ ref: CFUUID?) -> String? {
-        var str: String? = nil
-        if let aRef = ref {
-            str = "\(aRef)"
-        }
-        return ("\(str ?? "")" as NSString).substring(with: NSRange(location: (str?.count ?? 0) - 36, length: 36))
-    }
+//    func bleDidUpdateRSSI(_ rssi: NSNumber?) {
+//        rssiLabel.text = "RSSI: \("\(rssi)")"
+//
+//    }
+//
+//    func getUUIDString(_ ref: CFUUID?) -> String? {
+//        var str: String? = nil
+//        if let aRef = ref {
+//            str = "\(aRef)"
+//        }
+//        return ("\(str ?? "")" as NSString).substring(with: NSRange(location: (str?.count ?? 0) - 36, length: 36))
+//
+//    }
    
 
 }

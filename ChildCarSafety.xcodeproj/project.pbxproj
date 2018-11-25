@@ -14,6 +14,7 @@
 		7B53B0F521A9F44200BB74A9 /* ChildCarSafety-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B0F421A9F44200BB74A9 /* ChildCarSafety-Info.plist */; };
 		7B53B0F921AA001600BB74A9 /* ripple.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B0F821AA001600BB74A9 /* ripple.json */; };
 		7B53B0FB21AA126800BB74A9 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B0FA21AA126800BB74A9 /* confetti.json */; };
+		7B53B10121AB168900BB74A9 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B10021AB168900BB74A9 /* images.xcassets */; };
 		C2EFAF6D1727D22000ED5A4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF6C1727D22000ED5A4F /* UIKit.framework */; };
 		C2EFAF6F1727D22000ED5A4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF6E1727D22000ED5A4F /* Foundation.framework */; };
 		C2EFAF711727D22000ED5A4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF701727D22000ED5A4F /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 		7B53B0F721A9F90600BB74A9 /* ChildCarSafety-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChildCarSafety-Prefix.pch"; sourceTree = "<group>"; };
 		7B53B0F821AA001600BB74A9 /* ripple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ripple.json; path = ../../ripple.json; sourceTree = "<group>"; };
 		7B53B0FA21AA126800BB74A9 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = confetti.json; path = ../../confetti.json; sourceTree = "<group>"; };
+		7B53B10021AB168900BB74A9 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		82C287981F885992D90506BF /* Pods-ChildCarSafety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildCarSafety.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChildCarSafety/Pods-ChildCarSafety.release.xcconfig"; sourceTree = "<group>"; };
 		A8CAAA3731FF1355B118BA7B /* Pods_ChildCarSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChildCarSafety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EFAF691727D22000ED5A4F /* ChildCarSafety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildCarSafety.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				7B53B0F421A9F44200BB74A9 /* ChildCarSafety-Info.plist */,
 				7B53B0F721A9F90600BB74A9 /* ChildCarSafety-Prefix.pch */,
 				C2EFAF751727D22000ED5A4F /* InfoPlist.strings */,
+				7B53B10021AB168900BB74A9 /* images.xcassets */,
 				C2EFAF781727D22000ED5A4F /* main.m */,
 				C2EFAF7E1727D22000ED5A4F /* Default.png */,
 				C2EFAF801727D22000ED5A4F /* Default@2x.png */,
@@ -217,6 +220,7 @@
 				C2EFAF771727D22000ED5A4F /* InfoPlist.strings in Resources */,
 				7B53B0FB21AA126800BB74A9 /* confetti.json in Resources */,
 				7B53B0F521A9F44200BB74A9 /* ChildCarSafety-Info.plist in Resources */,
+				7B53B10121AB168900BB74A9 /* images.xcassets in Resources */,
 				C2EFAF7F1727D22000ED5A4F /* Default.png in Resources */,
 				7B53B0F921AA001600BB74A9 /* ripple.json in Resources */,
 				C2EFAF811727D22000ED5A4F /* Default@2x.png in Resources */,
