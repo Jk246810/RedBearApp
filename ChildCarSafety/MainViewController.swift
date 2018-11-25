@@ -39,6 +39,7 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
         ble.controlSetup()
         ble.delegate = self
         
+        
         if (lastUUID!.length > 0)
         {
             self.uuidLabel.text = self.lastUUID as String?;

@@ -29,29 +29,44 @@
         <scene sceneID="18">
             <objects>
                 <tableViewController title="Device" id="12" customClass="devicesViewController" customModule="ChildCarSafety" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="99" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.075730368494987488" green="0.11169238388538361" blue="0.16874887049198151" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="sectionIndexBackgroundColor" red="0.079701557755470276" green="0.11543811857700348" blue="0.17659138143062592" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell alpha="0.40000000000000002" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                            <tableViewCell alpha="0.40000000000000002" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" rowHeight="99" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
+                                <rect key="frame" x="0.0" y="22" width="375" height="99"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ0-d7-vTF" id="QmA-Mq-q9I">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="phq-AM-6qj">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.27645227313041687" green="0.45876142382621765" blue="0.92947185039520264" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.071886658668518066" green="0.111690953373909" blue="0.16874890029430389" alpha="0.52246989678899081" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.14606869220733643" green="0.17455027997493744" blue="0.23148556053638458" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="0.0" height="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -60,16 +75,18 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Device" id="36"/>
+                    <navigationItem key="navigationItem" title="Device" id="36">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="tpi-Vv-laj"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="343.5" y="-46.5"/>
         </scene>
-        <!--RedBearLab-->
+        <!--Child Car Safety-->
         <scene sceneID="rI0-vg-hHV">
             <objects>
-                <viewController id="j2O-YJ-RsU" customClass="MainViewController" customModule="ChildCarSafety" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Child Car Safety" id="j2O-YJ-RsU" userLabel="Child Car Safety" customClass="MainViewController" customModule="ChildCarSafety" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Chj-um-A4G"/>
                         <viewControllerLayoutGuide type="bottom" id="eKW-ZA-ItS"/>
@@ -82,13 +99,13 @@
                                 <rect key="frame" x="10" y="84" width="355" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRE-JZ-GRr">
-                                        <rect key="frame" x="297" y="5" width="50" height="24"/>
+                                        <rect key="frame" x="291" y="8" width="54" height="24"/>
                                         <color key="backgroundColor" red="0.66279542446136475" green="0.66278266906738281" blue="0.66279137134552002" alpha="0.35991420628834359" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="3hW-kG-OJp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <state key="normal" title="Connect">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                        <state key="normal" title="  Connect  ">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -102,13 +119,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgq-cC-ayw">
-                                        <rect key="frame" x="280" y="5" width="67" height="24"/>
-                                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="0.358680023006135" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="277" y="8" width="68" height="24"/>
+                                        <color key="backgroundColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="0.36077693634969327" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="XJk-60-xJj"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                                        <state key="normal" title="Disconnect">
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                        <state key="normal" title="  Disconnect  ">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -180,13 +197,13 @@
                                     <constraint firstAttribute="height" constant="100" id="8uj-yr-Yje"/>
                                     <constraint firstItem="hgq-cC-ayw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vzX-Wo-axV" secondAttribute="leading" constant="20" symbolic="YES" id="Ddr-hn-qJV"/>
                                     <constraint firstItem="tRE-JZ-GRr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vzX-Wo-axV" secondAttribute="leading" constant="20" symbolic="YES" id="EMa-fU-u0K"/>
-                                    <constraint firstAttribute="trailing" secondItem="hgq-cC-ayw" secondAttribute="trailing" constant="8" id="LBZ-UF-qBP"/>
-                                    <constraint firstItem="tRE-JZ-GRr" firstAttribute="top" secondItem="vzX-Wo-axV" secondAttribute="top" constant="5" id="LQ1-qr-qk1"/>
+                                    <constraint firstAttribute="trailing" secondItem="hgq-cC-ayw" secondAttribute="trailing" constant="10" id="LBZ-UF-qBP"/>
+                                    <constraint firstItem="tRE-JZ-GRr" firstAttribute="top" secondItem="vzX-Wo-axV" secondAttribute="top" constant="8" id="LQ1-qr-qk1"/>
                                     <constraint firstItem="Rec-xd-mc4" firstAttribute="centerY" secondItem="vzX-Wo-axV" secondAttribute="centerY" constant="10" id="PtF-Rj-NaD"/>
                                     <constraint firstItem="Yi0-oQ-rSL" firstAttribute="leading" secondItem="vzX-Wo-axV" secondAttribute="leading" constant="8" id="SgH-pe-vDX"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Yi0-oQ-rSL" secondAttribute="trailing" constant="20" symbolic="YES" id="g28-Ry-zNx"/>
-                                    <constraint firstItem="hgq-cC-ayw" firstAttribute="top" secondItem="vzX-Wo-axV" secondAttribute="top" constant="5" id="jvH-fC-I3d"/>
-                                    <constraint firstAttribute="trailing" secondItem="tRE-JZ-GRr" secondAttribute="trailing" constant="8" id="m1G-NK-o3t"/>
+                                    <constraint firstItem="hgq-cC-ayw" firstAttribute="top" secondItem="vzX-Wo-axV" secondAttribute="top" constant="8" id="jvH-fC-I3d"/>
+                                    <constraint firstAttribute="trailing" secondItem="tRE-JZ-GRr" secondAttribute="trailing" constant="10" id="m1G-NK-o3t"/>
                                     <constraint firstItem="Yi0-oQ-rSL" firstAttribute="top" secondItem="vzX-Wo-axV" secondAttribute="top" constant="5" id="z9S-mF-5nv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -231,7 +248,7 @@
                             <constraint firstItem="eKW-ZA-ItS" firstAttribute="top" secondItem="jXp-n5-VR9" secondAttribute="bottom" constant="20" id="yLc-h7-XUH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="RedBearLab" id="jfe-FB-GqI"/>
+                    <navigationItem key="navigationItem" title="Child Car Safety" id="jfe-FB-GqI"/>
                     <connections>
                         <outlet property="animationView" destination="jXp-n5-VR9" id="JpV-0L-fXN"/>
                         <outlet property="disconnectButton" destination="hgq-cC-ayw" id="CnK-Pm-F0b"/>

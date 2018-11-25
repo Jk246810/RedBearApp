@@ -36,6 +36,7 @@ class devicesViewController: UITableViewController{
         
         
         cell.textLabel?.text = bleDevices[indexPath.row] as? String
+        cell.layer.shadowColor = UIColor.blue.cgColor
         return cell
         
     }
@@ -48,4 +49,6 @@ class devicesViewController: UITableViewController{
          print("HERE")
         navigationController?.popViewController(animated: true)
     }
+    
+    
 }
