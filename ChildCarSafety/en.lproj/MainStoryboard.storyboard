@@ -46,7 +46,7 @@
                                             <rect key="frame" x="16" y="0.0" width="343" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.27645227313041687" green="0.45876142382621765" blue="0.92947185039520264" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="textColor" red="0.27450980392156865" green="0.45882352941176469" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </label>
                                     </subviews>
@@ -81,7 +81,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343.5" y="-46.5"/>
+            <point key="canvasLocation" x="312" y="383"/>
         </scene>
         <!--Child Car Safety-->
         <scene sceneID="rI0-vg-hHV">
@@ -248,11 +248,25 @@
                             <constraint firstItem="eKW-ZA-ItS" firstAttribute="top" secondItem="jXp-n5-VR9" secondAttribute="bottom" constant="20" id="yLc-h7-XUH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Child Car Safety" id="jfe-FB-GqI"/>
+                    <navigationItem key="navigationItem" title="Child Car Safety" id="jfe-FB-GqI">
+                        <barButtonItem key="rightBarButtonItem" image="information" id="J3o-3F-1aZ">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="50"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="infoButtonClicked:" destination="j2O-YJ-RsU" id="viJ-YK-O9p"/>
+                                <segue destination="Yte-hR-KwR" kind="push" identifier="infoSegue" id="v6H-VA-IQh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="animationView" destination="jXp-n5-VR9" id="JpV-0L-fXN"/>
                         <outlet property="disconnectButton" destination="hgq-cC-ayw" id="CnK-Pm-F0b"/>
                         <outlet property="gradientView" destination="vzX-Wo-axV" id="jIq-82-Gx6"/>
+                        <outlet property="infoButton" destination="J3o-3F-1aZ" id="nd8-xO-gTf"/>
                         <outlet property="lastButton" destination="tRE-JZ-GRr" id="i3o-E8-NEm"/>
                         <outlet property="scanButton" destination="tRf-do-OWF" id="5s4-k0-V6x"/>
                         <outlet property="uuidLabel" destination="3G1-rf-2cb" id="TPd-fq-BGR"/>
@@ -264,8 +278,19 @@
             </objects>
             <point key="canvasLocation" x="-213.5" y="-41.5"/>
         </scene>
+        <!--InfoStoryboard-->
+        <scene sceneID="yBB-kW-BpI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InfoStoryboard" id="Yte-hR-KwR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lCB-rh-BTU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLO-mD-f17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="311.5" y="-398.5"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="information" width="24" height="24"/>
         <image name="seat-belt-on-silhouette" width="64" height="64"/>
         <image name="wifi" width="24" height="24"/>
         <image name="wifi-signal" width="24" height="24"/>

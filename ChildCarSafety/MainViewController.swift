@@ -20,13 +20,13 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
    
    
     @IBOutlet weak var wifiImage: UIImageView!
-    
     @IBOutlet weak var animationView: LOTAnimationView!
     @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var lastButton: UIButton!
     @IBOutlet weak var scanButton: UIButton!
-    
     @IBOutlet weak var disconnectButton: UIButton!
+    @IBOutlet weak var infoButton: UIBarButtonItem!
+    
     
     @IBOutlet weak var gradientView: UIView!
     override func viewDidLoad() {
@@ -145,6 +145,11 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
                     }
                 }
                 self.performSegue(withIdentifier: "showDevice", sender: self)
+                self.scanButton.isHidden = false;
+                animationView.isHidden = false
+                animationView.setAnimation(named: "ripple")
+                animationView.loopAnimation = true
+                animationView.play()
             }
         }
         
@@ -162,16 +167,22 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
             animationView.loopAnimation = true
             animationView.play()
             //need to make alertview here
+            let alertController = UIAlertController(title: "No Devices Found", message: "Cannot find any available bluetooth devices. Check that your battery is charged and all cables are completely connected", preferredStyle: .alert)
+            
+            alertController.addAction(UIAlertAction(title: "ok", style: .cancel, handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
             
         }
     }
     
+    @IBAction func infoButtonClicked(_ sender: Any) {
+       performSegue(withIdentifier: "infoSegue", sender: self)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.scanButton.isHidden = false;
-        animationView.isHidden = false
-        animationView.setAnimation(named: "ripple")
-        animationView.loopAnimation = true
-        animationView.play()
+        
         if(segue.identifier == "showDevice") {
             let vc = segue.destination as? devicesViewController
            
@@ -221,28 +232,8 @@ class MainViewController: UIViewController, BLEDelegate, devicesViewControllerDe
     }
    
     func createGradient(){
-//        let gradient = CAGradientLayer()
-//        gradient.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor, UIColor.blue.cgColor]
-//        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-//        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-//        gradient.frame = gradientView.bounds
-//        gradientView.layer.addSublayer(gradient)
         gradientView.layer.borderColor = UIColor.white.cgColor
-        
     }
-//    func bleDidUpdateRSSI(_ rssi: NSNumber?) {
-//        rssiLabel.text = "RSSI: \("\(rssi)")"
-//
-//    }
-//
-//    func getUUIDString(_ ref: CFUUID?) -> String? {
-//        var str: String? = nil
-//        if let aRef = ref {
-//            str = "\(aRef)"
-//        }
-//        return ("\(str ?? "")" as NSString).substring(with: NSRange(location: (str?.count ?? 0) - 36, length: 36))
-//
-//    }
    
 
 }

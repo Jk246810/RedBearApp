@@ -15,6 +15,10 @@
 		7B53B0F921AA001600BB74A9 /* ripple.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B0F821AA001600BB74A9 /* ripple.json */; };
 		7B53B0FB21AA126800BB74A9 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B0FA21AA126800BB74A9 /* confetti.json */; };
 		7B53B10121AB168900BB74A9 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B53B10021AB168900BB74A9 /* images.xcassets */; };
+		7B87645921B19D4B0014D763 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B87645721B19D4B0014D763 /* InfoStoryboard.storyboard */; };
+		7B87645B21B5A44B0014D763 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B87645A21B5A44B0014D763 /* Launch Screen.storyboard */; };
+		7BDE066421AD9C8C00D32D78 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE066321AD9C8C00D32D78 /* InfoViewController.swift */; };
+		7BDE066A21AF3FC300D32D78 /* Acknowledgments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDE066921AF3FC300D32D78 /* Acknowledgments.swift */; };
 		C2EFAF6D1727D22000ED5A4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF6C1727D22000ED5A4F /* UIKit.framework */; };
 		C2EFAF6F1727D22000ED5A4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF6E1727D22000ED5A4F /* Foundation.framework */; };
 		C2EFAF711727D22000ED5A4F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFAF701727D22000ED5A4F /* CoreGraphics.framework */; };
@@ -41,6 +45,10 @@
 		7B53B0F821AA001600BB74A9 /* ripple.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ripple.json; path = ../../ripple.json; sourceTree = "<group>"; };
 		7B53B0FA21AA126800BB74A9 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = confetti.json; path = ../../confetti.json; sourceTree = "<group>"; };
 		7B53B10021AB168900BB74A9 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		7B87645821B19D4B0014D763 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/InfoStoryboard.storyboard; sourceTree = "<group>"; };
+		7B87645A21B5A44B0014D763 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7BDE066321AD9C8C00D32D78 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		7BDE066921AF3FC300D32D78 /* Acknowledgments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acknowledgments.swift; sourceTree = "<group>"; };
 		82C287981F885992D90506BF /* Pods-ChildCarSafety.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChildCarSafety.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChildCarSafety/Pods-ChildCarSafety.release.xcconfig"; sourceTree = "<group>"; };
 		A8CAAA3731FF1355B118BA7B /* Pods_ChildCarSafety.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChildCarSafety.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2EFAF691727D22000ED5A4F /* ChildCarSafety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChildCarSafety.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,9 +141,13 @@
 				C2EFAF7B1727D22000ED5A4F /* RBLAppDelegate.h */,
 				C2EFAF7C1727D22000ED5A4F /* RBLAppDelegate.m */,
 				C2EFAF841727D22000ED5A4F /* MainStoryboard.storyboard */,
+				7B87645721B19D4B0014D763 /* InfoStoryboard.storyboard */,
 				7B38A56E21A1C3A700C0B8CA /* BLE-Bridge-Header.h */,
 				7B38A56C21A1C37A00C0B8CA /* MainViewController.swift */,
 				7B38A56F21A1E0DF00C0B8CA /* devicesViewController.swift */,
+				7BDE066321AD9C8C00D32D78 /* InfoViewController.swift */,
+				7BDE066921AF3FC300D32D78 /* Acknowledgments.swift */,
+				7B87645A21B5A44B0014D763 /* Launch Screen.storyboard */,
 				C2EFAF731727D22000ED5A4F /* Supporting Files */,
 			);
 			path = ChildCarSafety;
@@ -223,7 +235,9 @@
 				7B53B10121AB168900BB74A9 /* images.xcassets in Resources */,
 				C2EFAF7F1727D22000ED5A4F /* Default.png in Resources */,
 				7B53B0F921AA001600BB74A9 /* ripple.json in Resources */,
+				7B87645B21B5A44B0014D763 /* Launch Screen.storyboard in Resources */,
 				C2EFAF811727D22000ED5A4F /* Default@2x.png in Resources */,
+				7B87645921B19D4B0014D763 /* InfoStoryboard.storyboard in Resources */,
 				C2EFAF831727D22000ED5A4F /* Default-568h@2x.png in Resources */,
 				C2EFAF861727D22000ED5A4F /* MainStoryboard.storyboard in Resources */,
 			);
@@ -293,7 +307,9 @@
 				C2EFAF791727D22000ED5A4F /* main.m in Sources */,
 				7B38A57021A1E0DF00C0B8CA /* devicesViewController.swift in Sources */,
 				C2EFAF7D1727D22000ED5A4F /* RBLAppDelegate.m in Sources */,
+				7BDE066A21AF3FC300D32D78 /* Acknowledgments.swift in Sources */,
 				7B38A56D21A1C37A00C0B8CA /* MainViewController.swift in Sources */,
+				7BDE066421AD9C8C00D32D78 /* InfoViewController.swift in Sources */,
 				2932F68F1813D5590049385E /* BLE.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +317,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7B87645721B19D4B0014D763 /* InfoStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7B87645821B19D4B0014D763 /* en */,
+			);
+			name = InfoStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		C2EFAF751727D22000ED5A4F /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
